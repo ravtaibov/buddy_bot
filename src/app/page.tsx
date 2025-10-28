@@ -1,10 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { FlipButton } from '@/components/ui/flip-button'
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const router = useRouter()
 
   const coursesData = {
     beginners: [
@@ -17,7 +19,8 @@ export default function Home() {
       'Оформление бороды',
       'Современные стрижки + переход fade',
       'Удлинённые мужские стрижки',
-      'Мужская завивка волос'
+      'Мужская завивка волос',
+      'Сложные техники окрашивания'
     ]
   }
 
@@ -27,6 +30,28 @@ export default function Home() {
 
   const handleBackToCategories = () => {
     setSelectedCategory(null)
+  }
+
+  const navigateToCourse = (course: string) => {
+    // Маппинг названий курсов к их URL-слагам
+    const courseMapping: { [key: string]: string } = {
+    'Барбер с нуля': 'barber-from-scratch',
+    'Мастер мужских стрижек': 'men-haircut-master',
+    'Колорист с нуля': 'colorist-from-scratch',
+    'Практика техники «FADE»': 'fade-technique-practice',
+    'Оформление бороды': 'beard-styling',
+    'Современные стрижки + переход fade': 'modern-haircuts-fade',
+    'Удлинённые мужские стрижки': 'long-men-haircuts',
+    'Мужская завивка волос': 'men-hair-perm',
+    'Сложные техники окрашивания': 'advanced-coloring-techniques'
+  }
+    
+    const courseSlug = courseMapping[course]
+    if (courseSlug) {
+      router.push(`/course/${courseSlug}`)
+    } else {
+      console.error(`Курс "${course}" не найден в маппинге`)
+    }
   }
 
   return (
@@ -80,6 +105,8 @@ export default function Home() {
                  </p>
                </div>
              </div>
+
+
           </div>
         ) : (
           // Course list view
@@ -101,6 +128,7 @@ export default function Home() {
                  {coursesData[selectedCategory as keyof typeof coursesData].map((course, index) => (
                    <div
                      key={index}
+                     onClick={() => navigateToCourse(course)}
                      className="bg-white/5 rounded-lg p-3 sm:p-4 border border-white/10 hover:bg-white/10 transition-all duration-200 hover:scale-[1.01] hover:shadow-md hover:shadow-white/5 cursor-pointer group"
                    >
                      <h3 className="text-base sm:text-lg text-white font-medium group-hover:text-blue-200 transition-colors duration-200">
