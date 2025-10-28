@@ -1,19 +1,10 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "src/index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "src/index.js"
-    }
-  ],
+  "buildCommand": "cd frontend && npm run build",
+  "outputDirectory": "frontend/.next",
+  "installCommand": "cd frontend && npm install",
+  "framework": "nextjs",
   "env": {
-    "BOT_TOKEN": "@bot_token",
-    "WEB_APP_URL": "@web_app_url"
+    "BOT_TOKEN": "8490038938:AAHF-ccgNGNgKJ2aw6aslZHvfMekbfIsQaQ",
+    "WEB_APP_URL": "https://buddy-bot-silk.vercel.app"
   }
 }
