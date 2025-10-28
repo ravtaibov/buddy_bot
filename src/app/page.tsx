@@ -36,9 +36,9 @@ export default function Home() {
       <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
       <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
-        <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+      <div className="relative z-10 flex flex-col items-center justify-start min-h-screen p-4 sm:p-6 lg:p-8 pt-10 sm:pt-14">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             Школа Buddy
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 font-light">
@@ -113,11 +113,7 @@ export default function Home() {
           </div>
         )}
 
-        <footer className="mt-12 sm:mt-16 text-center">
-          <p className="text-gray-400 text-sm sm:text-base">
-            С 2018 года • Екатеринбург
-          </p>
-        </footer>
+
       </div>
     </div>
   )
