@@ -1,0 +1,26 @@
+{
+  "name": "trae-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot with web app integration",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "telegraf",
+    "webapp"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "telegraf": "^4.16.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
