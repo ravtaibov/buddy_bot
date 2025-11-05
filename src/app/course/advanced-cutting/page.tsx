@@ -1,257 +1,322 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-
-const courseData = {
-  title: "Сложные техники стрижки",
-  description: "Продвинутый курс для опытных мастеров, изучающих сложные техники стрижки",
-  lessons: [
-    {
-      id: 1,
-      title: "Градуированные стрижки",
-      description: "Изучение сложных градуированных техник",
-      content: `
-        <h3>Градуированные стрижки</h3>
-        <p>В этом уроке мы изучим продвинутые техники создания градуированных стрижек.</p>
-        
-        <h4>Основные принципы градуировки:</h4>
-        <ul>
-          <li>Понимание углов среза</li>
-          <li>Работа с различными зонами головы</li>
-          <li>Создание плавных переходов</li>
-          <li>Техники наслоения</li>
-        </ul>
-        
-        <h4>Практические техники:</h4>
-        <p>1. <strong>Классическая градуировка:</strong> Создание объема через слои</p>
-        <p>2. <strong>Обратная градуировка:</strong> Техника для создания внутреннего объема</p>
-        <p>3. <strong>Смешанная градуировка:</strong> Комбинирование различных углов</p>
-        
-        <h4>Инструменты и техники:</h4>
-        <ul>
-          <li>Работа с филировочными ножницами</li>
-          <li>Техника point cutting</li>
-          <li>Слайсинг для создания текстуры</li>
-        </ul>
-      `
-    },
-    {
-      id: 2,
-      title: "Асимметричные стрижки",
-      description: "Создание современных асимметричных форм",
-      content: `
-        <h3>Асимметричные стрижки</h3>
-        <p>Изучение техник создания стильных асимметричных стрижек.</p>
-        
-        <h4>Планирование асимметрии:</h4>
-        <ul>
-          <li>Анализ формы лица клиента</li>
-          <li>Выбор подходящего типа асимметрии</li>
-          <li>Создание схемы стрижки</li>
-          <li>Определение ключевых точек</li>
-        </ul>
-        
-        <h4>Техники выполнения:</h4>
-        <p>1. <strong>Диагональные срезы:</strong> Создание динамичных линий</p>
-        <p>2. <strong>Геометрические формы:</strong> Четкие углы и переходы</p>
-        <p>3. <strong>Мягкая асимметрия:</strong> Плавные неравномерные формы</p>
-        
-        <h4>Особенности работы:</h4>
-        <ul>
-          <li>Точность измерений</li>
-          <li>Контроль симметрии в асимметрии</li>
-          <li>Работа с различными текстурами волос</li>
-        </ul>
-      `
-    },
-    {
-      id: 3,
-      title: "Текстурирование",
-      description: "Продвинутые техники создания текстуры",
-      content: `
-        <h3>Продвинутое текстурирование</h3>
-        <p>Мастерство создания различных текстур в стрижке.</p>
-        
-        <h4>Виды текстурирования:</h4>
-        <ul>
-          <li>Point cutting - точечная стрижка</li>
-          <li>Slide cutting - скользящая стрижка</li>
-          <li>Twist cutting - стрижка с поворотом</li>
-          <li>Razor cutting - работа с бритвой</li>
-        </ul>
-        
-        <h4>Техники для разных типов волос:</h4>
-        <p>1. <strong>Тонкие волосы:</strong> Создание объема через текстуру</p>
-        <p>2. <strong>Густые волосы:</strong> Прореживание и облегчение</p>
-        <p>3. <strong>Кудрявые волосы:</strong> Работа с естественной текстурой</p>
-        
-        <h4>Инструменты текстурирования:</h4>
-        <ul>
-          <li>Филировочные ножницы разных типов</li>
-          <li>Бритва и техники ее использования</li>
-          <li>Специальные ножницы для текстурирования</li>
-        </ul>
-      `
-    }
-  ]
-};
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 interface Lesson {
-  id: number;
-  title: string;
-  description: string;
-  content: string;
+  id: string
+  title: string
+  description: string
+  content: string
+}
+
+const courseData = {
+  id: 'advanced-cutting',
+  title: 'Сложные техники стрижки',
+  description: 'Продвинутый курс для опытных мастеров, изучающих сложные техники стрижки',
+  lessons: [
+    {
+      id: '1',
+      title: 'Градуированные стрижки',
+      description: 'Изучение сложных градуированных техник',
+      content: `Градуированные стрижки - основа продвинутого мастерства.
+
+ОСНОВНЫЕ ПРИНЦИПЫ ГРАДУИРОВКИ:
+
+ПОНИМАНИЕ УГЛОВ СРЕЗА:
+• Работа с различными зонами головы
+• Создание плавных переходов
+• Техники наслоения
+• Контроль объема
+
+ПРАКТИЧЕСКИЕ ТЕХНИКИ:
+
+КЛАССИЧЕСКАЯ ГРАДУИРОВКА:
+• Создание объема через слои
+• Работа с длиной
+• Формирование силуэта
+• Техники филировки
+
+ОБРАТНАЯ ГРАДУИРОВКА:
+• Техника для создания внутреннего объема
+• Работа с тяжелыми волосами
+• Создание поддержки формы
+• Контроль движения волос
+
+СМЕШАННАЯ ГРАДУИРОВКА:
+• Комбинирование различных углов
+• Создание сложных форм
+• Работа с переходами
+• Индивидуальный подход
+
+ИНСТРУМЕНТЫ И ТЕХНИКИ:
+• Работа с филировочными ножницами
+• Техника point cutting
+• Слайсинг для создания текстуры
+• Контроль натяжения волос`
+    },
+    {
+      id: '2',
+      title: 'Асимметричные стрижки',
+      description: 'Создание современных асимметричных форм',
+      content: `Асимметричные стрижки - искусство современного дизайна.
+
+ПЛАНИРОВАНИЕ АСИММЕТРИИ:
+
+АНАЛИЗ КЛИЕНТА:
+• Анализ формы лица клиента
+• Выбор подходящего типа асимметрии
+• Создание схемы стрижки
+• Определение ключевых точек
+
+ТЕХНИКИ ВЫПОЛНЕНИЯ:
+
+ДИАГОНАЛЬНЫЕ СРЕЗЫ:
+• Создание динамичных линий
+• Работа с углами
+• Контроль направления
+• Создание движения
+
+ГЕОМЕТРИЧЕСКИЕ ФОРМЫ:
+• Четкие углы и переходы
+• Архитектурный подход
+• Точность исполнения
+• Современные тренды
+
+МЯГКАЯ АСИММЕТРИЯ:
+• Плавные неравномерные формы
+• Естественные переходы
+• Органичные линии
+• Женственные силуэты
+
+ОСОБЕННОСТИ РАБОТЫ:
+• Точность измерений
+• Контроль симметрии в асимметрии
+• Работа с различными текстурами волос
+• Адаптация под тип лица`
+    },
+    {
+      id: '3',
+      title: 'Текстурирование',
+      description: 'Продвинутые техники создания текстуры',
+      content: `Продвинутое текстурирование - мастерство создания различных текстур.
+
+ВИДЫ ТЕКСТУРИРОВАНИЯ:
+
+POINT CUTTING:
+• Точечная стрижка
+• Создание мягких краев
+• Работа с кончиками
+• Естественная текстура
+
+SLIDE CUTTING:
+• Скользящая стрижка
+• Создание движения
+• Работа с объемом
+• Динамичные переходы
+
+TWIST CUTTING:
+• Стрижка с поворотом
+• Создание спиралей
+• Работа с кудрявыми волосами
+• Естественные завитки
+
+RAZOR CUTTING:
+• Работа с бритвой
+• Создание мягких переходов
+• Филировка краев
+• Естественная текстура
+
+ТЕХНИКИ ДЛЯ РАЗНЫХ ТИПОВ ВОЛОС:
+
+ТОНКИЕ ВОЛОСЫ:
+• Создание объема через текстуру
+• Поддержка формы
+• Визуальное утолщение
+• Легкость движения
+
+ГУСТЫЕ ВОЛОСЫ:
+• Прореживание и облегчение
+• Контроль объема
+• Создание подвижности
+• Управление формой
+
+КУДРЯВЫЕ ВОЛОСЫ:
+• Работа с естественной текстурой
+• Подчеркивание завитков
+• Контроль пушистости
+• Создание определенности
+
+ИНСТРУМЕНТЫ ТЕКСТУРИРОВАНИЯ:
+• Филировочные ножницы разных типов
+• Бритва и техники ее использования
+• Специальные ножницы для текстурирования
+• Техники безопасности`
+    }
+  ]
 }
 
 export default function AdvancedCuttingPage() {
-  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
-  const router = useRouter();
-  const [activeTab, setActiveTab] = useState('lessons');
-  const [favorites, setFavorites] = useState<number[]>([]);
-  const [archived, setArchived] = useState<number[]>([]);
-
-  const toggleFavorite = (lessonId: number) => {
-    setFavorites(prev => 
-      prev.includes(lessonId) 
-        ? prev.filter(id => id !== lessonId)
-        : [...prev, lessonId]
-    );
-  };
-
-  const toggleArchive = (lessonId: number) => {
-    setArchived(prev => 
-      prev.includes(lessonId) 
-        ? prev.filter(id => id !== lessonId)
-        : [...prev, lessonId]
-    );
-  };
+  const router = useRouter()
+  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null)
+  const [activeTab, setActiveTab] = useState<'current' | 'archive'>('current')
+  const [archived, setArchived] = useState<Set<string>>(new Set())
 
   const getFilteredLessons = () => {
-    switch (activeTab) {
-      case 'favorites':
-        return courseData.lessons.filter(lesson => favorites.includes(lesson.id));
-      case 'archive':
-        return courseData.lessons.filter(lesson => archived.includes(lesson.id));
-      default:
-        return courseData.lessons.filter(lesson => !archived.includes(lesson.id));
+    if (activeTab === 'archive') {
+      return courseData.lessons.filter(lesson => archived.has(lesson.id))
     }
-  };
+    return courseData.lessons.filter(lesson => !archived.has(lesson.id))
+  }
+
+  const toggleArchive = (lessonId: string) => {
+    const newArchived = new Set(archived)
+    if (newArchived.has(lessonId)) {
+      newArchived.delete(lessonId)
+    } else {
+      newArchived.add(lessonId)
+    }
+    setArchived(newArchived)
+  }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
       <div className="container mx-auto px-4 py-8">
-        <button 
-          onClick={() => router.back()}
-          className="mb-6 text-blue-600 hover:text-blue-800 flex items-center gap-2"
-        >
-          ← Назад к курсам
-        </button>
-        
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6">
-            <h1 className="text-3xl font-bold mb-2">{courseData.title}</h1>
-            <p className="text-blue-100">{courseData.description}</p>
-          </div>
+        {/* Header */}
+        <div className="mb-8">
+          <button
+            onClick={() => router.back()}
+            className="flex items-center text-gray-300 hover:text-white mb-6 transition-colors"
+          >
+            ← Назад
+          </button>
           
-          <div className="flex">
-            <div className="w-1/3 bg-gray-50 p-6">
-              <div className="flex mb-4 bg-gray-200 rounded-lg p-1">
-                <button
-                  onClick={() => setActiveTab('lessons')}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
-                    activeTab === 'lessons'
-                      ? 'bg-white text-blue-600 shadow-sm'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                >
-                  Уроки
-                </button>
-                <button
-                  onClick={() => setActiveTab('favorites')}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
-                    activeTab === 'favorites'
-                      ? 'bg-white text-blue-600 shadow-sm'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                >
-                  Избранное
-                </button>
-                <button
-                  onClick={() => setActiveTab('archive')}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
-                    activeTab === 'archive'
-                      ? 'bg-white text-blue-600 shadow-sm'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                >
-                  Архив
-                </button>
-              </div>
-              <div className="space-y-2">
-                {getFilteredLessons().map((lesson) => (
-                  <div key={lesson.id} className="relative">
-                    <button
-                      onClick={() => setSelectedLesson(lesson)}
-                      className={`w-full text-left p-3 rounded-lg transition-colors ${
-                        selectedLesson?.id === lesson.id
-                          ? 'bg-blue-100 border-l-4 border-blue-500'
-                          : 'hover:bg-gray-100'
-                      }`}
-                    >
-                      <h3 className="font-medium">{lesson.title}</h3>
-                      <p className="text-sm text-gray-600 mt-1">{lesson.description}</p>
-                    </button>
-                    <div className="absolute top-2 right-2 flex gap-1">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-white mb-4">
+              {courseData.title}
+            </h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              {courseData.description}
+            </p>
+          </div>
+
+          {/* Tab Buttons */}
+          <div className="flex justify-center mb-8">
+            <div className="flex space-x-4">
+              <button
+                onClick={() => setActiveTab('archive')}
+                className={`px-8 py-3 rounded-full text-lg font-medium transition-all ${
+                  activeTab === 'archive'
+                    ? 'bg-white/20 text-white border-2 border-white/30'
+                    : 'bg-white/10 text-gray-300 border-2 border-white/10 hover:bg-white/15'
+                }`}
+              >
+                Архив
+              </button>
+              <button
+                onClick={() => setActiveTab('current')}
+                className={`px-8 py-3 rounded-full text-lg font-medium transition-all ${
+                  activeTab === 'current'
+                    ? 'bg-white/20 text-white border-2 border-white/30'
+                    : 'bg-white/10 text-gray-300 border-2 border-white/10 hover:bg-white/15'
+                }`}
+              >
+                Актуальное
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Lessons List */}
+          <div className="lg:col-span-1">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <h2 className="text-xl font-bold text-white mb-6">
+                {activeTab === 'current' ? 'Актуальные уроки' : 'Архивные уроки'}
+              </h2>
+              
+              <div className="space-y-3">
+                {getFilteredLessons().map((lesson, index) => (
+                  <div
+                    key={lesson.id}
+                    className={`p-4 rounded-lg transition-all duration-200 ${
+                      selectedLesson?.id === lesson.id
+                        ? 'bg-blue-500/30 border border-blue-400/50'
+                        : 'bg-white/5 hover:bg-white/10 border border-white/10'
+                    }`}
+                  >
+                    <div className="flex items-start gap-3">
                       <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleFavorite(lesson.id);
-                        }}
-                        className={`p-1 rounded ${
-                          favorites.includes(lesson.id)
-                            ? 'text-yellow-500 hover:text-yellow-600'
-                            : 'text-gray-400 hover:text-yellow-500'
-                        }`}
-                        title={favorites.includes(lesson.id) ? 'Убрать из избранного' : 'Добавить в избранное'}
+                        onClick={() => setSelectedLesson(lesson)}
+                        className="flex items-start gap-3 flex-1 text-left"
                       >
-                        ⭐
-                      </button>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleArchive(lesson.id);
-                        }}
-                        className={`p-1 rounded ${
-                          archived.includes(lesson.id)
-                            ? 'text-red-500 hover:text-red-600'
-                            : 'text-gray-400 hover:text-red-500'
-                        }`}
-                        title={archived.includes(lesson.id) ? 'Убрать из архива' : 'Добавить в архив'}
-                      >
-                        📁
+                        <span className={`w-8 h-8 flex items-center justify-center text-sm font-bold ${
+                          selectedLesson?.id === lesson.id
+                            ? 'text-blue-400'
+                            : 'text-gray-300'
+                        }`}>
+                          {index + 1}
+                        </span>
+                        <div className="flex-1">
+                          <h3 className="text-white font-medium text-base mb-1">
+                            {lesson.title}
+                          </h3>
+                          <p className="text-gray-400 text-sm">
+                            {lesson.description}
+                          </p>
+                        </div>
                       </button>
                     </div>
                   </div>
                 ))}
+                
+                {getFilteredLessons().length === 0 && (
+                  <div className="text-center py-8">
+                    <p className="text-gray-400">
+                      {activeTab === 'current' ? 'Все уроки в архиве' : 'Архив пуст'}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
-            
-            <div className="flex-1 p-6">
-              {selectedLesson ? (
-                <div 
-                  className="prose max-w-none"
-                  dangerouslySetInnerHTML={{ __html: selectedLesson.content }}
-                />
-              ) : (
-                <div className="text-center text-gray-500 mt-8">
-                  <p>Выберите урок для просмотра содержания</p>
+          </div>
+
+          {/* Lesson Content */}
+          <div className="lg:col-span-2">
+            {selectedLesson && (
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <h2 className="text-2xl font-bold text-white mb-2">
+                      {selectedLesson.title}
+                    </h2>
+                    <p className="text-gray-300">
+                      {selectedLesson.description}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => toggleArchive(selectedLesson.id)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                      archived.has(selectedLesson.id)
+                        ? 'bg-green-500/20 text-green-300 border border-green-400/30'
+                        : 'bg-gray-500/20 text-gray-300 border border-gray-400/30'
+                    }`}
+                  >
+                    {archived.has(selectedLesson.id) ? 'Восстановить' : 'В архив'}
+                  </button>
                 </div>
-              )}
-            </div>
+                
+                <div className="prose prose-invert max-w-none">
+                  <div 
+                    className="text-gray-200 leading-relaxed whitespace-pre-wrap"
+                    dangerouslySetInnerHTML={{ __html: selectedLesson.content.replace(/\n/g, '<br>') }}
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

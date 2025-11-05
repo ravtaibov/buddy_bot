@@ -8,300 +8,289 @@ const courseData = {
   description: "Специализированный курс по работе с различными типами проблемных волос",
   lessons: [
     {
-      id: 1,
+      id: "1",
       title: "Диагностика проблем волос",
       description: "Определение типов проблем и их причин",
-      content: `
-        <h3>Диагностика проблем волос</h3>
-        <p>Научитесь правильно определять проблемы волос и их первопричины.</p>
-        
-        <h4>Основные типы проблем:</h4>
-        <ul>
-          <li>Поврежденные волосы (химическое воздействие)</li>
-          <li>Сухие и ломкие волосы</li>
-          <li>Жирные волосы у корней</li>
-          <li>Тонкие и редкие волосы</li>
-          <li>Непослушные и пушащиеся волосы</li>
-        </ul>
-        
-        <h4>Методы диагностики:</h4>
-        <p>1. <strong>Визуальный осмотр:</strong> Оценка состояния волос и кожи головы</p>
-        <p>2. <strong>Тактильная диагностика:</strong> Определение структуры и эластичности</p>
-        <p>3. <strong>Тест на пористость:</strong> Проверка способности волос впитывать влагу</p>
-        
-        <h4>Анамнез клиента:</h4>
-        <ul>
-          <li>История химических процедур</li>
-          <li>Используемые средства ухода</li>
-          <li>Образ жизни и питание</li>
-          <li>Гормональные изменения</li>
-        </ul>
-      `
+      content: `Диагностика проблем волос
+
+Научитесь правильно определять проблемы волос и их первопричины.
+
+Основные типы проблем:
+• Поврежденные волосы (химическое воздействие)
+• Сухие и ломкие волосы
+• Жирные волосы у корней
+• Тонкие и редкие волосы
+• Непослушные и пушащиеся волосы
+
+Методы диагностики:
+1. Визуальный осмотр: Оценка состояния волос и кожи головы
+2. Тактильная диагностика: Определение структуры и эластичности
+3. Тест на пористость: Проверка способности волос впитывать влагу
+
+Анамнез клиента:
+• История химических процедур
+• Используемые средства ухода
+• Образ жизни и питание
+• Гормональные изменения`
     },
     {
-      id: 2,
+      id: "2",
       title: "Техники для поврежденных волос",
       description: "Специальные приемы работы с поврежденными волосами",
-      content: `
-        <h3>Техники для поврежденных волос</h3>
-        <p>Изучение безопасных техник стрижки поврежденных волос.</p>
-        
-        <h4>Принципы работы:</h4>
-        <ul>
-          <li>Минимизация механического воздействия</li>
-          <li>Использование острых инструментов</li>
-          <li>Техники "горячих ножниц"</li>
-          <li>Поэтапное восстановление длины</li>
-        </ul>
-        
-        <h4>Специальные техники:</h4>
-        <p>1. <strong>Dusting:</strong> Удаление только поврежденных кончиков</p>
-        <p>2. <strong>Search and destroy:</strong> Точечное удаление секущихся волос</p>
-        <p>3. <strong>Protective cutting:</strong> Стрижка с сохранением длины</p>
-        
-        <h4>Рекомендации по уходу:</h4>
-        <ul>
-          <li>Протеиновые маски для восстановления</li>
-          <li>Увлажняющие процедуры</li>
-          <li>Защита от термического воздействия</li>
-          <li>Регулярная коррекция кончиков</li>
-        </ul>
-      `
+      content: `Техники для поврежденных волос
+
+Изучение безопасных техник стрижки поврежденных волос.
+
+Принципы работы:
+• Минимизация механического воздействия
+• Использование острых инструментов
+• Техники "горячих ножниц"
+• Поэтапное восстановление длины
+
+Специальные техники:
+1. Dusting: Удаление только поврежденных кончиков
+2. Search and destroy: Точечное удаление секущихся волос
+3. Protective cutting: Стрижка с сохранением длины
+
+Рекомендации по уходу:
+• Протеиновые маски для восстановления
+• Увлажняющие процедуры
+• Защита от термического воздействия
+• Регулярная коррекция кончиков`
     },
     {
-      id: 3,
+      id: "3",
       title: "Работа с тонкими волосами",
       description: "Создание объема и плотности для тонких волос",
-      content: `
-        <h3>Работа с тонкими волосами</h3>
-        <p>Техники создания визуального объема и плотности.</p>
-        
-        <h4>Стратегии создания объема:</h4>
-        <ul>
-          <li>Многослойные стрижки</li>
-          <li>Текстурирование для плотности</li>
-          <li>Правильная длина для типа волос</li>
-          <li>Техники укладки для объема</li>
-        </ul>
-        
-        <h4>Техники стрижки:</h4>
-        <p>1. <strong>Градуированный боб:</strong> Классика для тонких волос</p>
-        <p>2. <strong>Лесенка:</strong> Создание движения и объема</p>
-        <p>3. <strong>Пикси с текстурой:</strong> Максимальный объем на коротких волосах</p>
-        
-        <h4>Что избегать:</h4>
-        <ul>
-          <li>Слишком сильное филирование</li>
-          <li>Очень длинные волосы</li>
-          <li>Тяжелые прямые срезы</li>
-          <li>Агрессивное текстурирование</li>
-        </ul>
-        
-        <h4>Средства для укладки:</h4>
-        <ul>
-          <li>Муссы для объема</li>
-          <li>Текстурирующие спреи</li>
-          <li>Сухие шампуни</li>
-          <li>Легкие фиксирующие средства</li>
-        </ul>
-      `
+      content: `Работа с тонкими волосами
+
+Техники создания визуального объема и плотности.
+
+Стратегии создания объема:
+• Многослойные стрижки
+• Текстурирование для плотности
+• Правильная длина для типа волос
+• Техники укладки для объема
+
+Техники стрижки:
+1. Градуированный боб: Классика для тонких волос
+2. Лесенка: Создание движения и объема
+3. Пикси с текстурой: Максимальный объем на коротких волосах
+
+Что избегать:
+• Слишком сильное филирование
+• Очень длинные волосы
+• Тяжелые прямые срезы
+• Агрессивное текстурирование
+
+Средства для укладки:
+• Муссы для объема
+• Текстурирующие спреи
+• Сухие шампуни
+• Легкие фиксирующие средства`
     },
     {
-      id: 4,
+      id: "4",
       title: "Кудрявые и непослушные волосы",
       description: "Техники работы с кудрявыми и непослушными волосами",
-      content: `
-        <h3>Кудрявые и непослушные волосы</h3>
-        <p>Специальные подходы к стрижке кудрявых волос.</p>
-        
-        <h4>Понимание структуры кудрей:</h4>
-        <ul>
-          <li>Типы кудрей (2A-4C)</li>
-          <li>Пористость кудрявых волос</li>
-          <li>Естественные паттерны роста</li>
-          <li>Усадка при высыхании</li>
-        </ul>
-        
-        <h4>Техники стрижки кудрей:</h4>
-        <p>1. <strong>Стрижка на сухие волосы:</strong> Видение естественной формы</p>
-        <p>2. <strong>Curly cutting:</strong> Стрижка каждого завитка отдельно</p>
-        <p>3. <strong>DevaCut:</strong> Специализированная техника для кудрей</p>
-        
-        <h4>Принципы работы:</h4>
-        <ul>
-          <li>Не растягивать волосы при стрижке</li>
-          <li>Работать с естественным паттерном</li>
-          <li>Создавать форму, а не бороться с ней</li>
-          <li>Учитывать усадку волос</li>
-        </ul>
-        
-        <h4>Уход за кудрями:</h4>
-        <ul>
-          <li>Метод "co-washing"</li>
-          <li>Техники нанесения средств</li>
-          <li>Сушка диффузором</li>
-          <li>Защита во время сна</li>
-        </ul>
-      `
+      content: `Кудрявые и непослушные волосы
+
+Специальные подходы к стрижке кудрявых волос.
+
+Понимание структуры кудрей:
+• Типы кудрей (2A-4C)
+• Пористость кудрявых волос
+• Естественные паттерны роста
+• Усадка при высыхании
+
+Техники стрижки кудрей:
+1. Стрижка на сухие волосы: Видение естественной формы
+2. Curly cutting: Стрижка каждого завитка отдельно
+3. DevaCut: Специализированная техника для кудрей
+
+Принципы работы:
+• Не растягивать волосы при стрижке
+• Работать с естественным паттерном
+• Создавать форму, а не бороться с ней
+• Учитывать усадку волос
+
+Уход за кудрями:
+• Метод "co-washing"
+• Техники нанесения средств
+• Сушка диффузором
+• Защита во время сна`
     }
   ]
 };
 
 interface Lesson {
-  id: number;
+  id: string;
   title: string;
   description: string;
   content: string;
 }
 
 export default function ProblemHairPage() {
-  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
-  const router = useRouter();
-  const [activeTab, setActiveTab] = useState('lessons');
-  const [favorites, setFavorites] = useState<number[]>([]);
-  const [archived, setArchived] = useState<number[]>([]);
-
-  const toggleFavorite = (lessonId: number) => {
-    setFavorites(prev => 
-      prev.includes(lessonId) 
-        ? prev.filter(id => id !== lessonId)
-        : [...prev, lessonId]
-    );
-  };
-
-  const toggleArchive = (lessonId: number) => {
-    setArchived(prev => 
-      prev.includes(lessonId) 
-        ? prev.filter(id => id !== lessonId)
-        : [...prev, lessonId]
-    );
-  };
+  const router = useRouter()
+  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null)
+  const [activeTab, setActiveTab] = useState<'current' | 'archive'>('current')
+  const [archived, setArchived] = useState<Set<string>>(new Set())
 
   const getFilteredLessons = () => {
-    switch (activeTab) {
-      case 'favorites':
-        return courseData.lessons.filter(lesson => favorites.includes(lesson.id));
-      case 'archive':
-        return courseData.lessons.filter(lesson => archived.includes(lesson.id));
-      default:
-        return courseData.lessons.filter(lesson => !archived.includes(lesson.id));
+    if (activeTab === 'archive') {
+      return courseData.lessons.filter(lesson => archived.has(lesson.id))
     }
-  };
+    return courseData.lessons.filter(lesson => !archived.has(lesson.id))
+  }
+
+  const toggleArchive = (lessonId: string) => {
+    const newArchived = new Set(archived)
+    if (newArchived.has(lessonId)) {
+      newArchived.delete(lessonId)
+    } else {
+      newArchived.add(lessonId)
+    }
+    setArchived(newArchived)
+  }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
       <div className="container mx-auto px-4 py-8">
-        <button 
-          onClick={() => router.back()}
-          className="mb-6 text-blue-600 hover:text-blue-800 flex items-center gap-2"
-        >
-          ← Назад к курсам
-        </button>
-        
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-6">
-            <h1 className="text-3xl font-bold mb-2">{courseData.title}</h1>
-            <p className="text-green-100">{courseData.description}</p>
-          </div>
+        {/* Header */}
+        <div className="mb-8">
+          <button
+            onClick={() => router.back()}
+            className="flex items-center text-gray-300 hover:text-white mb-6 transition-colors"
+          >
+            ← Назад
+          </button>
           
-          <div className="flex">
-            <div className="w-1/3 bg-gray-50 p-6">
-              <div className="flex mb-4 bg-gray-200 rounded-lg p-1">
-                <button
-                  onClick={() => setActiveTab('lessons')}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
-                    activeTab === 'lessons'
-                      ? 'bg-white text-blue-600 shadow-sm'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                >
-                  Уроки
-                </button>
-                <button
-                  onClick={() => setActiveTab('favorites')}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
-                    activeTab === 'favorites'
-                      ? 'bg-white text-blue-600 shadow-sm'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                >
-                  Избранное
-                </button>
-                <button
-                  onClick={() => setActiveTab('archive')}
-                  className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
-                    activeTab === 'archive'
-                      ? 'bg-white text-blue-600 shadow-sm'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                >
-                  Архив
-                </button>
-              </div>
-              <div className="space-y-2">
-                {getFilteredLessons().map((lesson) => (
-                  <div key={lesson.id} className="relative">
-                    <button
-                      onClick={() => setSelectedLesson(lesson)}
-                      className={`w-full text-left p-3 rounded-lg transition-colors ${
-                        selectedLesson?.id === lesson.id
-                          ? 'bg-green-100 border-l-4 border-green-500'
-                          : 'hover:bg-gray-100'
-                      }`}
-                    >
-                      <h3 className="font-medium">{lesson.title}</h3>
-                      <p className="text-sm text-gray-600 mt-1">{lesson.description}</p>
-                    </button>
-                    <div className="absolute top-2 right-2 flex gap-1">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-white mb-4">
+              {courseData.title}
+            </h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              {courseData.description}
+            </p>
+          </div>
+
+          {/* Tab Buttons */}
+          <div className="flex justify-center mb-8">
+            <div className="flex space-x-4">
+              <button
+                onClick={() => setActiveTab('archive')}
+                className={`px-8 py-3 rounded-full text-lg font-medium transition-all ${
+                  activeTab === 'archive'
+                    ? 'bg-white/20 text-white border-2 border-white/30'
+                    : 'bg-white/10 text-gray-300 border-2 border-white/10 hover:bg-white/15'
+                }`}
+              >
+                Архив
+              </button>
+              <button
+                onClick={() => setActiveTab('current')}
+                className={`px-8 py-3 rounded-full text-lg font-medium transition-all ${
+                  activeTab === 'current'
+                    ? 'bg-white/20 text-white border-2 border-white/30'
+                    : 'bg-white/10 text-gray-300 border-2 border-white/10 hover:bg-white/15'
+                }`}
+              >
+                Актуальное
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Lessons List */}
+          <div className="lg:col-span-1">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <h2 className="text-xl font-bold text-white mb-6">
+                {activeTab === 'current' ? 'Актуальные уроки' : 'Архивные уроки'}
+              </h2>
+              
+              <div className="space-y-3">
+                {getFilteredLessons().map((lesson, index) => (
+                  <div
+                    key={lesson.id}
+                    className={`p-4 rounded-lg transition-all duration-200 ${
+                      selectedLesson?.id === lesson.id
+                        ? 'bg-blue-500/30 border border-blue-400/50'
+                        : 'bg-white/5 hover:bg-white/10 border border-white/10'
+                    }`}
+                  >
+                    <div className="flex items-start gap-3">
                       <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleFavorite(lesson.id);
-                        }}
-                        className={`p-1 rounded ${
-                          favorites.includes(lesson.id)
-                            ? 'text-yellow-500 hover:text-yellow-600'
-                            : 'text-gray-400 hover:text-yellow-500'
-                        }`}
-                        title={favorites.includes(lesson.id) ? 'Убрать из избранного' : 'Добавить в избранное'}
+                        onClick={() => setSelectedLesson(lesson)}
+                        className="flex items-start gap-3 flex-1 text-left"
                       >
-                        ⭐
-                      </button>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleArchive(lesson.id);
-                        }}
-                        className={`p-1 rounded ${
-                          archived.includes(lesson.id)
-                            ? 'text-red-500 hover:text-red-600'
-                            : 'text-gray-400 hover:text-red-500'
-                        }`}
-                        title={archived.includes(lesson.id) ? 'Убрать из архива' : 'Добавить в архив'}
-                      >
-                        📁
+                        <span className={`w-8 h-8 flex items-center justify-center text-sm font-bold ${
+                          selectedLesson?.id === lesson.id
+                            ? 'text-blue-400'
+                            : 'text-gray-300'
+                        }`}>
+                          {index + 1}
+                        </span>
+                        <div className="flex-1">
+                          <h3 className="text-white font-medium text-base mb-1">
+                            {lesson.title}
+                          </h3>
+                          <p className="text-gray-400 text-sm">
+                            {lesson.description}
+                          </p>
+                        </div>
                       </button>
                     </div>
                   </div>
                 ))}
+                
+                {getFilteredLessons().length === 0 && (
+                  <div className="text-center py-8">
+                    <p className="text-gray-400">
+                      {activeTab === 'current' ? 'Все уроки в архиве' : 'Архив пуст'}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
-            
-            <div className="flex-1 p-6">
-              {selectedLesson ? (
-                <div 
-                  className="prose max-w-none"
-                  dangerouslySetInnerHTML={{ __html: selectedLesson.content }}
-                />
-              ) : (
-                <div className="text-center text-gray-500 mt-8">
-                  <p>Выберите урок для просмотра содержания</p>
+          </div>
+
+          {/* Lesson Content */}
+          <div className="lg:col-span-2">
+            {selectedLesson && (
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <h2 className="text-2xl font-bold text-white mb-2">
+                      {selectedLesson.title}
+                    </h2>
+                    <p className="text-gray-300">
+                      {selectedLesson.description}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => toggleArchive(selectedLesson.id)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                      archived.has(selectedLesson.id)
+                        ? 'bg-green-500/20 text-green-300 border border-green-400/30'
+                        : 'bg-gray-500/20 text-gray-300 border border-gray-400/30'
+                    }`}
+                  >
+                    {archived.has(selectedLesson.id) ? 'Восстановить' : 'В архив'}
+                  </button>
                 </div>
-              )}
-            </div>
+                
+                <div className="prose prose-invert max-w-none">
+                  <div 
+                    className="text-gray-200 leading-relaxed whitespace-pre-wrap"
+                    dangerouslySetInnerHTML={{ __html: selectedLesson.content.replace(/\n/g, '<br>') }}
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

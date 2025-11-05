@@ -139,7 +139,7 @@ export default function BarberFromScratchPage() {
         {/* Header */}
         <div className="mb-8">
           <button
-            onClick={() => router.push('/')}
+            onClick={() => router.back()}
             className="flex items-center text-gray-300 hover:text-white mb-6 transition-colors"
           >
             ← Назад
@@ -204,10 +204,10 @@ export default function BarberFromScratchPage() {
                         onClick={() => setSelectedLesson(lesson)}
                         className="flex items-start gap-3 flex-1 text-left"
                       >
-                        <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                        <span className={`w-8 h-8 flex items-center justify-center text-sm font-bold ${
                           selectedLesson?.id === lesson.id
-                            ? 'bg-blue-500 text-white'
-                            : 'bg-gray-600 text-gray-300'
+                            ? 'text-blue-400'
+                            : 'text-gray-300'
                         }`}>
                           {index + 1}
                         </span>
@@ -237,7 +237,7 @@ export default function BarberFromScratchPage() {
 
           {/* Lesson Content */}
           <div className="lg:col-span-2">
-            {selectedLesson ? (
+            {selectedLesson && (
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <div className="flex justify-between items-start mb-6">
                   <div>
@@ -266,10 +266,6 @@ export default function BarberFromScratchPage() {
                     dangerouslySetInnerHTML={{ __html: selectedLesson.content.replace(/\n/g, '<br>') }}
                   />
                 </div>
-              </div>
-            ) : (
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 flex items-center justify-center h-64">
-                <p className="text-gray-400 text-lg">Выберите урок для просмотра</p>
               </div>
             )}
           </div>

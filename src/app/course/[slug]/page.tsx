@@ -52,10 +52,10 @@ export default function CoursePage() {
         {/* Header */}
         <div className="mb-8">
           <button
-            onClick={() => router.push('/')}
+            onClick={() => router.back()}
             className="text-gray-300 hover:text-white transition-colors mb-4"
           >
-            ← Назад к курсам
+            ← Назад
           </button>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             {course.title}

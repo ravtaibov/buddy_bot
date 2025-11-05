@@ -1153,10 +1153,10 @@ export default function ClipperCutsPage() {
         {/* Header */}
         <div className="mb-8">
           <button
-            onClick={() => router.push('/')}
+            onClick={() => router.back()}
             className="text-gray-300 hover:text-white transition-colors mb-4"
           >
-            ← Назад к курсам
+            ← Назад
           </button>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             {courseData.title}
@@ -1229,10 +1229,10 @@ export default function ClipperCutsPage() {
                         className="w-full text-left p-3 pr-16"
                       >
                         <div className="flex items-center gap-3">
-                          <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                          <span className={`w-6 h-6 flex items-center justify-center text-xs font-bold ${
                             selectedLesson?.id === lesson.id
-                              ? 'bg-blue-500 text-white'
-                              : 'bg-gray-600 text-gray-300'
+                              ? 'text-blue-400'
+                              : 'text-gray-300'
                           }`}>
                             {courseData.lessons.findIndex(l => l.id === lesson.id) + 1}
                           </span>
@@ -1287,7 +1287,7 @@ export default function ClipperCutsPage() {
 
           {/* Lesson Content */}
           <div className="lg:col-span-2">
-            {selectedLesson ? (
+            {selectedLesson && (
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-2xl font-bold text-white">
@@ -1327,10 +1327,6 @@ export default function ClipperCutsPage() {
                     dangerouslySetInnerHTML={{ __html: selectedLesson.content.replace(/\n/g, '<br>') }}
                   />
                 </div>
-              </div>
-            ) : (
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 flex items-center justify-center h-64">
-                <p className="text-gray-400 text-lg">Выберите урок для просмотра</p>
               </div>
             )}
           </div>

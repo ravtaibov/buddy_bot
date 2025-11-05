@@ -1679,10 +1679,10 @@ export default function StylingPage() {
         {/* Header */}
         <div className="mb-8">
           <button
-            onClick={() => router.push('/')}
+            onClick={() => router.back()}
             className="text-gray-300 hover:text-white transition-colors mb-4"
           >
-            ← Назад к курсам
+            ← Назад
           </button>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             {courseData.title}
@@ -1729,33 +1729,33 @@ export default function StylingPage() {
                   📁 Архив ({archived.length})
                 </button>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {getFilteredLessons().map((lesson, index) => (
                   <div
                     key={lesson.id}
-                    className={`w-full p-3 rounded-lg transition-all duration-200 ${
+                    className={`p-4 rounded-lg transition-all duration-200 ${
                       selectedLesson?.id === lesson.id
                         ? 'bg-blue-500/30 border border-blue-400/50'
                         : 'bg-white/5 hover:bg-white/10 border border-white/10'
                     }`}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-start gap-3">
                       <button
                         onClick={() => setSelectedLesson(lesson)}
-                        className="flex items-center gap-3 flex-1 text-left"
+                        className="flex items-start gap-3 flex-1 text-left"
                       >
-                        <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                        <span className={`w-8 h-8 flex items-center justify-center text-sm font-bold ${
                           selectedLesson?.id === lesson.id
-                            ? 'bg-blue-500 text-white'
-                            : 'bg-gray-600 text-gray-300'
+                            ? 'text-blue-400'
+                            : 'text-gray-300'
                         }`}>
                           {index + 1}
                         </span>
                         <div className="flex-1">
-                          <h3 className="text-white font-medium text-sm">
+                          <h3 className="text-white font-medium text-base mb-1">
                             {lesson.title}
                           </h3>
-                          <p className="text-gray-400 text-xs">
+                          <p className="text-gray-400 text-sm">
                             {lesson.description}
                           </p>
                         </div>
@@ -1793,7 +1793,7 @@ export default function StylingPage() {
 
           {/* Lesson Content */}
           <div className="lg:col-span-2">
-            {selectedLesson ? (
+            {selectedLesson && (
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h2 className="text-2xl font-bold text-white mb-4">
                   {selectedLesson.title}
@@ -1807,10 +1807,6 @@ export default function StylingPage() {
                     dangerouslySetInnerHTML={{ __html: selectedLesson.content.replace(/\n/g, '<br>') }}
                   />
                 </div>
-              </div>
-            ) : (
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 flex items-center justify-center h-64">
-                <p className="text-gray-400 text-lg">Выберите урок для просмотра</p>
               </div>
             )}
           </div>
