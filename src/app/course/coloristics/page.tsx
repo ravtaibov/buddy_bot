@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { CoursePageLayout } from '@/components/ui/course-page-layout'
 
 interface Lesson {
   id: string
@@ -851,94 +852,5 @@ YOUTUBE ОБУЧЕНИЕ:
 }
 
 export default function ColoristicsPage() {
-  const router = useRouter()
-  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null)
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="mb-8">
-          <button
-            onClick={() => router.back()}
-            className="text-gray-300 hover:text-white transition-colors mb-4"
-          >
-            ← Назад
-          </button>
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            {courseData.title}
-          </h1>
-          <p className="text-gray-300 text-lg">
-            {courseData.description}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Lessons List */}
-          <div className="lg:col-span-1">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <h2 className="text-xl font-bold text-white mb-4">
-                Уроки ({courseData.lessons.length})
-              </h2>
-              <div className="space-y-3">
-                {courseData.lessons.map((lesson, index) => (
-                  <div
-                    key={lesson.id}
-                    className={`p-4 rounded-lg transition-all duration-200 ${
-                      selectedLesson?.id === lesson.id
-                        ? 'bg-blue-500/30 border border-blue-400/50'
-                        : 'bg-white/5 hover:bg-white/10 border border-white/10'
-                    }`}
-                  >
-                    <div className="flex items-start gap-3">
-                      <button
-                        onClick={() => setSelectedLesson(lesson)}
-                        className="flex items-start gap-3 flex-1 text-left"
-                      >
-                        <span className={`w-8 h-8 flex items-center justify-center text-sm font-bold ${
-                          selectedLesson?.id === lesson.id
-                            ? 'text-blue-400'
-                            : 'text-gray-300'
-                        }`}>
-                          {index + 1}
-                        </span>
-                        <div className="flex-1">
-                          <h3 className="text-white font-medium text-base mb-1">
-                            {lesson.title}
-                          </h3>
-                          <p className="text-gray-400 text-sm">
-                            {lesson.description}
-                          </p>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Lesson Content */}
-          <div className="lg:col-span-2">
-            {selectedLesson && (
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                <h2 className="text-2xl font-bold text-white mb-4">
-                  {selectedLesson.title}
-                </h2>
-                <p className="text-gray-300 mb-6">
-                  {selectedLesson.description}
-                </p>
-                <div className="prose prose-invert max-w-none">
-                  <div 
-                    className="text-gray-200 leading-relaxed whitespace-pre-wrap"
-                    dangerouslySetInnerHTML={{ __html: selectedLesson.content.replace(/\n/g, '<br>') }}
-                  />
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+  return <CoursePageLayout course={courseData} />;
 }

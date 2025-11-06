@@ -1,4 +1,5 @@
 'use client'
+import { CoursePageLayout } from '@/components/ui/course-page-layout'
 
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -157,30 +158,8 @@ RAZOR CUTTING:
 }
 
 export default function AdvancedCuttingPage() {
-  const router = useRouter()
-  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null)
-  const [activeTab, setActiveTab] = useState<'current' | 'archive'>('current')
-  const [archived, setArchived] = useState<Set<string>>(new Set())
-
-  const getFilteredLessons = () => {
-    if (activeTab === 'archive') {
-      return courseData.lessons.filter(lesson => archived.has(lesson.id))
-    }
-    return courseData.lessons.filter(lesson => !archived.has(lesson.id))
-  }
-
-  const toggleArchive = (lessonId: string) => {
-    const newArchived = new Set(archived)
-    if (newArchived.has(lessonId)) {
-      newArchived.delete(lessonId)
-    } else {
-      newArchived.add(lessonId)
-    }
-    setArchived(newArchived)
-  }
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+  return <CoursePageLayout course={courseData} />;
+}
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
